@@ -12,7 +12,7 @@ pip install selenium
 ```
 ### pillow
 ```
-pip install PIL
+pip install pillow
 ```
 
 Now you can use this module.

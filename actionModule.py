@@ -15,7 +15,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.select import Select
 from PIL import ImageGrab
 import os
-
+import time
 
 # from models.FamilyData import FamilyData
 
