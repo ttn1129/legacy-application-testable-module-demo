@@ -12,7 +12,7 @@ Python 3.7.4
 pip install -r requirements.txt
 ```
 
-## 3. chrome driver download and set Path
+## 3. download a chromedriver and set Path of chromedriver
 https://sites.google.com/a/chromium.org/chromedriver/home
 
 
