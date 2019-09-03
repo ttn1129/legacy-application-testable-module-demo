@@ -6,13 +6,9 @@ Python 3.7.4
 ```
 
 # 2. install dependency
-### selenium
+
 ```
-pip install selenium 
-```
-### pillow
-```
-pip install pillow
+pip install -r requirements.txt
 ```
 
 Now you can use this module.
