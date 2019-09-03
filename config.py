@@ -1,0 +1,8 @@
+screenshotDirectoryName = 'screenshot'
+screenshotBasePath = './' + screenshotDirectoryName + '/'
+backupDirectoryName = 'bk'
+backupBasePath = './' + backupDirectoryName + '/'
+uploadFileDirectoryName = 'uploads'
+uploadFileBasePath = './' + uploadFileDirectoryName + '/'
+downloadsDirectoryName = 'downloads'
+downloadsFilePath = './' + downloadsDirectoryName + '/'

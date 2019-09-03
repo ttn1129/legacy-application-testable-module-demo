@@ -4,44 +4,29 @@ import config
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.webdriver import WebDriver
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-
 from selenium.webdriver.remote.webelement import WebElement
-
 from selenium.webdriver.support.select import Select
 from PIL import ImageGrab
-import os
 import time
-
+from OsModule import OsModule
+osModule = OsModule()
 # from models.FamilyData import FamilyData
 
 # from datetime import datetime
-screenshotDirectoryName = 'tmp'
-screenshotBasePath = './'+screenshotDirectoryName+'/'
+screenshotDirectoryName = config.screenshotDirectoryName
+screenshotBasePath = config.screenshotDirectoryName
 
-def makeDirectoryIfNotExist(directoryName:str):
-    if not os.path.exists(directoryName):
-        os.mkdir(directoryName)
-    return
 
 def screenshotOfDisplay(driver: WebDriver, filename: str = 'screenshotOfDisplay.png'):
-    makeDirectoryIfNotExist(screenshotDirectoryName)
+    osModule.makeDirectoryIfNotExist(screenshotDirectoryName)
     path = screenshotBasePath + filename
     print(path)
     img = ImageGrab.grab()
     img.save(path)
-    # # Ref: https://stackoverflow.com/a/52572919/
-    # original_size = driver.get_window_size()
-    # required_width = driver.execute_script('return document.body.parentNode.scrollWidth')
-    # required_height = driver.execute_script('return document.body.parentNode.scrollHeight')
-    # driver.set_window_size(required_width, required_height)
-    # # driver.save_screenshot(path)  # has scrollbar
-    # driver.find_element_by_tag_name('body').screenshot(path)  # avoids scrollbar
-    # driver.set_window_size(original_size['width'], original_size['height'])
 
 def clickElement(driver:WebDriver, element:WebElement)->None:
     actionsClickElement = ActionChains(driver)
@@ -98,3 +83,6 @@ def selectValueWithNameSearchInsideElement(targetElement:WebElement, searchName:
 def selectOptionValue(targetSelectElement:WebElement, selectValue)->None:
     Select(targetSelectElement).select_by_value(selectValue)
     return
+
+def getText(element:WebElement)->str:
+    return element.text
