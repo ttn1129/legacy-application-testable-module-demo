@@ -17,6 +17,7 @@ class WebDriverModule(object):
     def getCoromeOptions(self)->ChromeOptions:
         options = ChromeOptions()
         prefs = {
+            "plugins.always_open_pdf_externally": True,
             "profile.default_content_settings.popups": 1,
             "download.default_directory": 
                     os.path.abspath(downloadsFilePath) + r"\\", #IMPORTANT - ENDING SLASH V IMPORTANT
